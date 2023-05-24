@@ -1,0 +1,12 @@
+FROM wordpress:latest
+
+ENV WORDPRESS_DB_HOST=172.18.0.2
+ENV WORDPRESS_DB_USER=wpuser
+ENV WORDPRESS_DB_PASSWORD=wppassword
+ENV WORDPRESS_DB_NAME=wpdatabase
+ENV WORDPRESS_TABLE_PREFIX=wp_
+
+VOLUME /var/www/html
+
+EXPOSE 80
+CMD ["apache2-foreground"]

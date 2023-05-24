@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image mariadb
+    - run: docker build . --file mariadb/Dockerfile --tag my-image-mariadb:$(date +%s)
+
+    steps2:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image mariadb
+    - run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress:$(date +%s )

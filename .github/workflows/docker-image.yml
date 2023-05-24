@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image mariadb
-      run: docker build . -f mariadb/Dockerfile -t my-image-mariadb:$(date)
+      run: docker build -f mariadb/Dockerfile -t my-image-mariadb
     - name: Build the Docker image wordpress
-      run: docker build . -f wordpress/Dockerfile -t my-image-wordpress:$(date)
+      run: docker build -f wordpress/Dockerfile -t my-image-wordpress

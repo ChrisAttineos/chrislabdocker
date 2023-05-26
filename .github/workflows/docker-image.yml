@@ -36,12 +36,11 @@ jobs:
         tags: test 
       
     - name: Build and push Docker image
-      uses: docker/build-push-action@v4.0.0
+      uses: cloudposse/github-action-docker-build-push@1.12.0
       with:
-          context: .
-          file: mariadb/Dockerfile
-          push: true
-          tags: testv2 
+          context: mariadb
+          file: Dockerfile
+
       
       
       

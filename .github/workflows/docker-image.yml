@@ -29,17 +29,17 @@ jobs:
       run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress
 
     - name: Extract metadata (tags, labels) for Docker
-       id: meta
-       uses: docker/metadata-action
-       with:
-         images: chrisattineos/repoimageattineos
+      id: meta
+      uses: docker/metadata-action@v4.4.0
+      with:
+        images: chrisattineos/repoimageattineos
       
-     - name: Build and push Docker image
-       uses: docker/build-push-action
-       with:
-         context: .
-         file: mariadb/Dockerfile
-         push: true
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4.0.0
+      with:
+          context: .
+          file: mariadb/Dockerfile
+          push: true
       
       
       

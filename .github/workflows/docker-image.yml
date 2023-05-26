@@ -26,3 +26,7 @@ jobs:
       run:  docker build . --file mariadb/Dockerfile --tag my-image-mariadb:latest
     - name: Build the Docker image wordpress
       run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress:latest
+    - name: Push the Docker image mariadb on Docker hub
+      run:  docker push my-image-mariadb:latest chrisattineos/repoimageattineos:mariadb
+    - name: Push the Docker image wordpress on Docker hub
+      run:  docker push my-image-wordpress:latest chrisattineos/repoimageattineos:wordpress

@@ -22,9 +22,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: token docker
+      run:  dckr_pat_nFHA5QPfeGmQtY8MsiAAGtyr_qw
     - name: Build the Docker image mariadb
       run:  docker build . --file mariadb/Dockerfile --tag my-image-mariadb
     - name: Build the Docker image wordpress
       run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress
     - name: Push the Docker image mariadb on Docker hub
       run:  docker push my-image-mariadb:latest
+      
+      
+      
+      

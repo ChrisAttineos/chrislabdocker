@@ -28,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: mariadb/Dockerfile
+          file: ./mariadb/Dockerfile
           push: true
           tags: chrisattineos/repoimageattineos:latest

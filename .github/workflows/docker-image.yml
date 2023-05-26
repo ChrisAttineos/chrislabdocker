@@ -27,8 +27,19 @@ jobs:
       run:  docker build . --file mariadb/Dockerfile --tag chrislab_mariadb:latest
     - name: Build the Docker image wordpress
       run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress
-    - name: Push the Docker image mariadb on Docker hub
-      run:  docker push chrisattineos/chrislab_mariadb/chrislab_mariadb:latest      
+
+    - name: Extract metadata (tags, labels) for Docker
+       id: meta
+       uses: docker/metadata-action
+       with:
+         images: chrisattineos/repoimageattineos
+      
+     - name: Build and push Docker image
+       uses: docker/build-push-action
+       with:
+         context: .
+         file: mariadb/Dockerfile
+         push: true
       
       
       

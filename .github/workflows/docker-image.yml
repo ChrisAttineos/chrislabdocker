@@ -16,7 +16,7 @@ jobs:
         with:
           username: chrisattineos
           password: dckr_pat_nFHA5QPfeGmQtY8MsiAAGtyr_qw
-          repository: chrisattineos/repoimageattineos
+          
   build:
 
     runs-on: ubuntu-latest
@@ -28,8 +28,7 @@ jobs:
     - name: Build the Docker image wordpress
       run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress
     - name: Push the Docker image mariadb on Docker hub
-      run:  docker push docker push chrisattineos/repoimageattineos:my-image-mariadb
-      
+      run:  docker push my-image-mariadb:chrisattineos/repoimageattineos      
       
       
       

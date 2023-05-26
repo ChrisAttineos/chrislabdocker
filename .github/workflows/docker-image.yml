@@ -15,7 +15,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: chrisattineos
-          password: ${{PWD_DOCKERHUB}}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           
   build:
 

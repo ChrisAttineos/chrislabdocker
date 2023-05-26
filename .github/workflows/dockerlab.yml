@@ -1,9 +1,10 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - 'main'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   docker:
@@ -23,7 +24,7 @@ jobs:
           password: ${{ secrets.PWR_DOCKERHUB }}
       -
         name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v4.0.0
         with:
           push: true
-          tags: user/app:latest
+          

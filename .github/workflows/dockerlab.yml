@@ -27,7 +27,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: chrislabdocker/wordpress
-          file: Dockerfile
+          context: .
           push: true
           tags: chrisattineos/repoimageattineos:latest

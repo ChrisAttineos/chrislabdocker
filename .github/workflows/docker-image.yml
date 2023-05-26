@@ -16,6 +16,7 @@ jobs:
         with:
           username: chrisattineos
           password: dckr_pat_nFHA5QPfeGmQtY8MsiAAGtyr_qw
+          repository: chrisattineos/repoimageattineos
   build:
 
     runs-on: ubuntu-latest

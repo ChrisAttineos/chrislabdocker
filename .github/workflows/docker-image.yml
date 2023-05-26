@@ -41,7 +41,7 @@ jobs:
           context: .
           file: mariadb/Dockerfile
           push: true
-          tags: test 
+          tags: testv2 
       
       
       

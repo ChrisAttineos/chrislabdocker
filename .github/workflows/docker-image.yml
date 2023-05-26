@@ -23,8 +23,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image mariadb
-      run:  docker build . --file mariadb/Dockerfile --tag my-image-mariadb:chrisattineos/repoimageattineos
+      run:  docker build . --file mariadb/Dockerfile --tag my-image-mariadb
     - name: Build the Docker image wordpress
-      run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress:chrisattineos/repoimageattineos
+      run:  docker build . --file wordpress/Dockerfile --tag my-image-wordpress
     - name: Push the Docker image mariadb on Docker hub
-      run:  docker push my-image-mariadb
+      run:  docker push my-image-mariadb:latest

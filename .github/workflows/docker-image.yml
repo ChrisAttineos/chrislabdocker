@@ -33,7 +33,7 @@ jobs:
       uses: docker/metadata-action@v4.4.0
       with:
         images: chrisattineos/repoimageattineos
-        tag: test 
+        tags: test 
       
     - name: Build and push Docker image
       uses: docker/build-push-action@v4.0.0
@@ -41,7 +41,7 @@ jobs:
           context: .
           file: mariadb/Dockerfile
           push: true
-          tag: test 
+          tags: test 
       
       
       

@@ -41,7 +41,7 @@ jobs:
         uses: dflook/terraform-apply@v1.29.1
         with:
           # Path to the terraform configuration
-          path: # optional, default is .
+          path: .
           # Name of the terraform workspace
           workspace: # optional, default is default
           # List of backend config values to set, one per line

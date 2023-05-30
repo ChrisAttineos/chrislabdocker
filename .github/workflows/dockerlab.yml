@@ -45,4 +45,4 @@ jobs:
             workingDirectory: .
             stackName: 
             # What action to take: 'plan-only', 'plan-and-apply'
-            mode: 'plan-and-apply'
+            mode: 'auto-approve-apply'

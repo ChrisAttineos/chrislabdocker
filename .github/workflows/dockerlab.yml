@@ -37,6 +37,12 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
-        name : tf
-        run : terraform apply
-         
+        name: terraform-cdk-action
+        uses: hashicorp/terraform-cdk-action@v0.1.0
+        with:
+            terraformVersion: 4.0
+            # The directory to use for the project
+            workingDirectory: .
+            stackName: 
+            # What action to take: 'plan-only', 'plan-and-apply'
+            mode: 'plan-and-apply'

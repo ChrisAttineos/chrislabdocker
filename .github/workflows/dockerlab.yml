@@ -36,6 +36,13 @@ jobs:
           push: true
           tags: chrisattineos/repoimageattineos:wordpress
           
-      - 
-        name: terraform
-        run : terraform apply
+     - 
+        name: Deploy Docker to AWS (EC2)
+        uses: bitovi/github-actions-deploy-docker-to-ec2@v0.5.3
+        with:
+          aws_access_key_id: 
+          aws_secret_access_key: 
+          aws_default_region: eu-west-3
+          aws_ami_id: # optional
+          ec2_instance_type: t2.micro
+         

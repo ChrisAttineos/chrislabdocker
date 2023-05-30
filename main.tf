@@ -9,14 +9,14 @@ terraform {
 
 provider "aws" {
     region     = "eu-west-3"
-    accesskey   = "AKIATXMWXRUIMYKK6OIF"
-    secretkey   = "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"
+    accesskey   = ${{ secrets.AWS_ACCESSKEY }}
+    secretkey   = ${{ secrets.AWS_SECRETKEY }}
 }
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "my-vpc"
+  name = "tfmy-vpc"
   cidr = "10.0.0.0/16"
 
   azs             = ["eu-west-3"]

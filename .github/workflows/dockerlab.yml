@@ -40,7 +40,7 @@ jobs:
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0
         with:
-            terraformVersion: 4.0
+            terraformVersion: 1.2.2
             # The directory to use for the project
             workingDirectory: .
             stackName: 

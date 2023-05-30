@@ -37,12 +37,5 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       - 
-        name: Deploy Docker to AWS (EC2)
-        uses: bitovi/github-actions-deploy-docker-to-ec2@v0.5.3
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESSKEY }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRETKEY }}
-          aws_default_region: eu-west-3
-          aws_ami_id: ami-05a8450aee7da05fb
-          ec2_instance_type: t2.micro
-          ec2_volume_size: # 8
+        name: terraform
+        run : terraform apply

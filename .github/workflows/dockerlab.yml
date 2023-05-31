@@ -37,6 +37,13 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
+        name: install dependance
+        run: |
+          npm install
+          npm run build && npm run package
+          
+          
+      -
         name: Checkout
         uses: actions/checkout@v3
       - 

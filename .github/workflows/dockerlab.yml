@@ -38,7 +38,7 @@ jobs:
           
       -
         name : npm install
-        run : apt install npm -y
+        run : sudo apt install npm -y
         
       -
         name : cdk install 

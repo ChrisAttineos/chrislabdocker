@@ -50,7 +50,7 @@ jobs:
      
       - 
         name: Generate module and provider bindings
-        run: npx cdktf-cli
+        run: npx cdktf-cli get
       -
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0

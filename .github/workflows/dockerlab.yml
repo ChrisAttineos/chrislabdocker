@@ -74,7 +74,7 @@ jobs:
           # Associate a public IP address to the EC2 instance
           associate-public-ip-address: "false"
           # Tags to apply to the EC2 instance
-          tags: "vmtestgithub"
+#          tags: "vmtestgithub"
           # Startup commands to run on the EC2 instance
           user-data: "sudo apt update -y"
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.

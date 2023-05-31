@@ -41,7 +41,7 @@ jobs:
         uses: hashicorp/terraform-cdk-action@v0.1.0
         with:
           # Path to the terraform configuration
-          cdktfVersion: 0.11.1
+          cdktfVersion: 0.12.2
           # The version of terraform to use
           terraformVersion: 1.2.2
           # The directory to use for the project

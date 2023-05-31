@@ -48,9 +48,6 @@ jobs:
         name : cdk
         run : npm install cdktf-cli@0.16.1
      
-      - 
-        name: Generate module and provider bindings
-        run: npx cdktf-cli get
       -
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0

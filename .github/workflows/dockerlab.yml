@@ -45,7 +45,6 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
-        -
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0
         with:

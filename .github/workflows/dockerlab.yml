@@ -67,7 +67,7 @@ jobs:
 #          instance-profile: "TruemarkEC2RoleforSSM"
           region: "eu-west-3"
           # Name of the EC2 instance to be added to the tags
-          name: "testgithub"
+#          name: "testgithub"
           user-data: |
             #!/bin/bash
             echo "hello world"

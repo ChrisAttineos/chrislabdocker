@@ -42,21 +42,4 @@ jobs:
         with:
           # Path to the terraform configuration
           path: .
-          # Name of the terraform workspace
-          workspace: # optional, default is default
-          # List of backend config values to set, one per line
-          backend_config: # optional, default is 
-          # Path to a backend config file
-          backend_config_file: # optional, default is 
-          # Variable definitions
-          variables: # optional
-          # Comma separated list of vars to set, e.g. 'foo=bar'
-          var: # optional, default is 
-          # List of var file paths, one per line
-          var_file: # optional, default is 
-          # Limit the number of concurrent operations
-          parallelism: # optional, default is 0
-          # A friendly name for this plan
-          label: # optional, default is 
-          # Automatically approve and apply plan
           auto_approve: true

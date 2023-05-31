@@ -47,6 +47,6 @@ jobs:
       -
         name : terraform
         run : |
-          apt install terraform -y
+          sudo apt install terraform -y
           terraform init
           terraform apply

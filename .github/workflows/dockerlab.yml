@@ -46,5 +46,7 @@ jobs:
           
       -
         name : terraform
-        uses: hashicorp/setup-terraform@v2
-        run : terraform init
+        run : |
+          apt install terraform -y
+          terraform init
+          terraform apply

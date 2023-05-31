@@ -22,14 +22,6 @@ jobs:
           username: ${{ secrets.USER_DOCKERHUB }}
           password: ${{ secrets.PWD_DOCKERHUB }}
       -
-        name: Checkout
-        uses: actions/checkout@v2
-      -
-        name: checkout
-        uses: actions/setup-node@v1
-        with:
-          node-version: "16"
-      -
         name: Build and push
         uses: docker/build-push-action@v4
         with:

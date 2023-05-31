@@ -51,7 +51,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESSKEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRETKEY }}
-          aws-region: eu-west-3
+          aws-region: "eu-west-3"
 #          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
       - 
         name: AWS EC2 Run Instance

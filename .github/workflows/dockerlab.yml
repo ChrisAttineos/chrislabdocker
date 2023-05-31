@@ -49,8 +49,8 @@ jobs:
         name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESSKEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRETKEY }}
+          aws-access-key-id: "AKIATXMWXRUIOJ252I6N"
+          aws-secret-access-key: "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"
           aws-region: "eu-west-3"
 #          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
       - 

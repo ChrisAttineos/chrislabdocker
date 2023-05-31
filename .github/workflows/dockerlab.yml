@@ -45,16 +45,9 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
-        name: Install dependencies
-        run: yarn install
-
-      -
-        name : npm install
-        run : npm install    
-      -
         name : cdk
         run : npm install cdktf-cli@0.16.1
-      
+     
       - 
         name: Generate module and provider bindings
         run: npx cdktf-cli get

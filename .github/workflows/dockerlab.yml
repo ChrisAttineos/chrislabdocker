@@ -37,6 +37,13 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
+        name : npm install
+        run : apt install npm -y
+        
+      -
+        name : cdk install 
+        run : npm install --global cdktf-cli@latest
+      -
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0
         with:

@@ -41,5 +41,5 @@ jobs:
         uses: dflook/terraform-apply@v1.29.1
         with:
           # Path to the terraform configuration
-          path: .
+          path: ./main.tf
           auto_approve: true

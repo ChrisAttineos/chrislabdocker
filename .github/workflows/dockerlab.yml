@@ -49,6 +49,9 @@ jobs:
         run: yarn install
 
       -
+        name : npm install
+        run : npm install && npm cache clear --force      
+      -
         name : cdk
         run : npm install cdktf-cli@0.16.1
       

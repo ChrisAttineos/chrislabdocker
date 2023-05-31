@@ -50,7 +50,7 @@ jobs:
 
       -
         name : cdk
-        run : npm install --global cdktf-cli@latest
+        run : npm install cdktf-cli@0.16.1
       
       - 
         name: Generate module and provider bindings

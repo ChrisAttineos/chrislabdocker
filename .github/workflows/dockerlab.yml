@@ -45,21 +45,6 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
-        name : cdk
-        run : npm install cdktf-cli@0.16.1
-     
-      -
-        name: terraform-cdk-action
-        uses: hashicorp/terraform-cdk-action@v0.1.0
-        with:
-          # Path to the terraform configuration
-          cdktfVersion: 0.11.2
-          # The version of terraform to use
-          terraformVersion: 1.3.0
-          # The directory to use for the project
-          workingDirectory: ./
-          # The stack to run / plan
-          stackName: my-stack
-          # What action to take: 'plan-only', 'plan-and-apply'
-          mode: auto-approve-apply
-          githubToken: ${{ secrets.TOKENGIT }}
+        name : terraform
+        uses: hashicorp/setup-terraform@v2
+        run : terraform init

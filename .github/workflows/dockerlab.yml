@@ -56,20 +56,36 @@ jobs:
           aws-region: eu-west-3
 #          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
       - 
-        name: Setup ARM64 EC2
-        id: ec2-arm64
+        name: AWS EC2 Run Instance
+        # You may pin to the exact commit or the version.
+        # uses: truemark/aws-ec2-run-instance-action@2e57ddbdb8d585c939f3bb088cf45df4d7e5f10b
         uses: truemark/aws-ec2-run-instance-action@v5
         with:
-          security-group-id: "sg-076459ca5bd094b2e"
+          # Subnet ID to launch the instance in
           subnet-id: "subnet-060e898e0ef9de33d"
+          # Security group to apply to the EC2 instance
+          security-group-id: "sg-076459ca5bd094b2e"
+          # Image ID to use for the EC2 instance. Also accepts default-arm64 and default-amd64 options
           image-id: "ami-05a8450aee7da05fb"
+          # Instance type to use for the EC2 instance
           instance-type: "t2.micro"
-#          instance-profile: "TruemarkEC2RoleforSSM"
+          # Instance profile to use for the EC2 instance
+          instance-profile: "ecsInstanceRole"
+          # Volume size in GB to use for the EC2 instance
+          volume-size: "8"
+          # Associate a public IP address to the EC2 instance
+          associate-public-ip-address: "false"
+          # Tags to apply to the EC2 instance
+          tags: "vmtestgithub"
+          # Startup commands to run on the EC2 instance
+          user-data: "sudo apt update -y"
+          # Shutdown behavior for the EC2 instance. This may be stop or terminate.
+          instance-shutdown-behavior: "stop"
+          # AWS region to use for the EC2 instance
           region: "eu-west-3"
-          # Name of the EC2 instance to be added to the tags
+          # SSH key name to use for the EC2 instance
           key-name: "keypair1"
-          terminate-on-post: # optional, default is true
-          name: "testgithub"
-          user-data: |
-            #!/bin/bash
-            echo "hello world"
+          # Terminate the EC2 instance after the post step
+          terminate-on-post: "false"
+          # Name of the EC2 instance to be added to the tags
+          name: "vmtestgithub"

@@ -37,12 +37,12 @@ jobs:
           tags: chrisattineos/repoimageattineos:wordpress
           
       -
-        name : npm install
-        run : sudo apt install npm -y
-        
-      -
-        name : cdk install 
-        run : npm install cdktf
+        name: Install dependencies
+        run: yarn install
+
+      - 
+        name: Generate module and provider bindings
+        run: npx cdktf-cli get
       -
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0

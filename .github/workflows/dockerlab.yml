@@ -49,4 +49,4 @@ jobs:
           # The stack to run / plan
           stackName: tfrun
           # What action to take: 'plan-only', 'plan-and-apply'
-          mode: 'apply'
+          mode: 'auto-approve-apply'

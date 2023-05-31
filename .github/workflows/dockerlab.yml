@@ -48,6 +48,10 @@ jobs:
         name: Install dependencies
         run: yarn install
 
+      -
+        name : cdk
+        run : npm install --global cdktf-cli@latest
+      
       - 
         name: Generate module and provider bindings
         run: npx cdktf-cli get

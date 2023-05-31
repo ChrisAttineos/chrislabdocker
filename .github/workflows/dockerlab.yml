@@ -38,8 +38,15 @@ jobs:
           
       -
         name: terraform-cdk-action
-        uses: dflook/terraform-apply@v1.29.1
+        uses: hashicorp/terraform-cdk-action@v0.1.0
         with:
           # Path to the terraform configuration
-          path: .
-          auto_approve: true
+          cdktfVersion: 0.11.1
+          # The version of terraform to use
+          terraformVersion: 1.2.2
+          # The directory to use for the project
+          workingDirectory: ./
+          # The stack to run / plan
+          stackName: tfrun
+          # What action to take: 'plan-only', 'plan-and-apply'
+          mode: 'apply'

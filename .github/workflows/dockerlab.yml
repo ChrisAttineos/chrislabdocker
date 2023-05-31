@@ -50,4 +50,4 @@ jobs:
           stackName: tfrun
           # What action to take: 'plan-only', 'plan-and-apply'
           mode: 'auto-approve-apply'
-          githubToken: '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'
+          githubToken: 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

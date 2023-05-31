@@ -42,7 +42,7 @@ jobs:
         
       -
         name : cdk install 
-        run : npm install --global cdktf-cli@latest
+        run : npm install cdktf
       -
         name: terraform-cdk-action
         uses: hashicorp/terraform-cdk-action@v0.1.0

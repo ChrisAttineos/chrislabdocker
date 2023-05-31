@@ -40,7 +40,6 @@ jobs:
         name: install dependance
         run: |
           sudo apt install npm nodejs
-          npm install
           npm run build && npm run package
           
           

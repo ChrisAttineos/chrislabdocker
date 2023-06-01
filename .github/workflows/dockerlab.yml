@@ -25,16 +25,16 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:chrislab_mariadb"
+          context: "{{defaultContext}}:ariadb"
           push: true
-          tags: chrisattineos/repoimageattineos:mariadb
+          tags: chrisattineos/repoimageattineos:chrislab_mariadb
       -
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:chrislab_wordpress"
+          context: "{{defaultContext}}:wordpress"
           push: true
-          tags: chrisattineos/repoimageattineos:wordpress
+          tags: chrisattineos/repoimageattineos:chrislab_wordpress
           
       -
         name: install dependance

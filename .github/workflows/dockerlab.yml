@@ -49,7 +49,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESSKEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRETKEY }}
-          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
+#          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
           aws-region: "eu-west-3"
           
       -

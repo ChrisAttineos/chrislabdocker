@@ -25,14 +25,14 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:mariadb"
+          context: "{{defaultContext}}:chrislab_mariadb"
           push: true
           tags: chrisattineos/repoimageattineos:mariadb
       -
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:wordpress"
+          context: "{{defaultContext}}:chrislab_wordpress"
           push: true
           tags: chrisattineos/repoimageattineos:wordpress
           
@@ -83,11 +83,18 @@ jobs:
             #!/bin/bash
             sudo yum update -y 
             sudo yum install docker -y
+            wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) 
+            sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+            sudo chmod -v +x /usr/local/bin/docker-compose
             sudo systemctl start docker 
             sudo systemctl enable docker
-            sudo docker pull chrisattineos/repoimageattineos:wordpress
-            sudo docker pull chrisattineos/repoimageattineos:mariadb
-            
+            sudo docker pull chrisattineos/repoimageattineos:chrislab_wordpress
+            sudo docker pull chrisattineos/repoimageattineos:chrislab_mariadb
+            sudo yum install git -y
+            cd /tmp
+            sudo git clone https://github.com/ChrisAttineos/repodownload.git
+            cd repodownload/
+            sudo docker-compose up       
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"
           # AWS region to use for the EC2 instance

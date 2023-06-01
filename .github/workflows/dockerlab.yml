@@ -81,8 +81,8 @@ jobs:
           # Startup commands to run on the EC2 instance
           user-data: |
             #!/bin/bash
-            sudo apt update -y 
-            sudo apt install docker
+            sudo yum update -y 
+            sudo yum install docker
             
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"

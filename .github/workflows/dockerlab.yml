@@ -42,7 +42,13 @@ jobs:
           sudo apt install npm nodejs -y
           sudo apt install awscli -y
           
-          
+      -
+      
+        name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
+          aws-region: "eu-west-3"
           
       -
         name: Checkout

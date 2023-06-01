@@ -79,7 +79,11 @@ jobs:
           # Tags to apply to the EC2 instance
 #          tags: "vmtestgithub"
           # Startup commands to run on the EC2 instance
-          user-data: "sudo apt update -y && sudo apt install docker"
+          user-data: |
+            #!/bin/bash
+            sudo apt update -y 
+            sudo apt install docker
+            
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"
           # AWS region to use for the EC2 instance

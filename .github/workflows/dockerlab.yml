@@ -82,7 +82,7 @@ jobs:
           user-data: |
             #!/bin/bash
             sudo yum update -y 
-            sudo yum install docker
+            sudo yum install docker -y
             
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"
@@ -93,4 +93,4 @@ jobs:
           # Terminate the EC2 instance after the post step
           terminate-on-post: "false"
           # Name of the EC2 instance to be added to the tags
-          name: "testgithub"
+          name: "vmpipelinegithub"

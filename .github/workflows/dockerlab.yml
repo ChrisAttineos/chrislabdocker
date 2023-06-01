@@ -83,6 +83,10 @@ jobs:
             #!/bin/bash
             sudo yum update -y 
             sudo yum install docker -y
+            sudo systemctl start docker 
+            sudo systemctl enable docker
+            sudo docker pull chrisattineos/repoimageattineos:wordpress
+            sudo docker pull chrisattineos/repoimageattineos:mariadb
             
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"

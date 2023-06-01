@@ -39,7 +39,9 @@ jobs:
       -
         name: install dependance
         run: |
-          sudo apt install npm nodejs
+          sudo apt install npm nodejs -y
+          sudo apt install awscli -y
+          
           
           
       -

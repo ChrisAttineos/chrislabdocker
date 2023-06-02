@@ -73,7 +73,7 @@ jobs:
           # Instance type to use for the EC2 instance
           instance-type: "t2.micro"
           # Instance profile to use for the EC2 instance
-#          instance-profile: "ecsInstanceRole"
+          instance-profile: "ecsInstanceRole"
           # Volume size in GB to use for the EC2 instance
           volume-size: "8"
           # Associate a public IP address to the EC2 instance
@@ -91,12 +91,12 @@ jobs:
             chmod +x script-env.sh
             ./script-env.sh
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
-#          instance-shutdown-behavior: "stop"
+          instance-shutdown-behavior: "stop"
           # AWS region to use for the EC2 instance
           region: ${{ env.AWSREGION }}
           # SSH key name to use for the EC2 instance
           key-name: "keypair1"
           # Terminate the EC2 instance after the post step
-#          terminate-on-post: "false"
+          terminate-on-post: "false"
           # Name of the EC2 instance to be added to the tags
           name: "pipelinegithub"

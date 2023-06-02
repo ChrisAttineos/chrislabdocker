@@ -52,7 +52,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESSKEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRETKEY }}
-          aws-region: $AWSREGION
+          aws-region: ${{ env.AWSREGION }}
           
 #      -
 #        name: Checkout
@@ -93,7 +93,7 @@ jobs:
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"
           # AWS region to use for the EC2 instance
-          region: $AWSREGION
+          region: ${{ env.AWSREGION }}
           # SSH key name to use for the EC2 instance
           key-name: "keypair1"
           # Terminate the EC2 instance after the post step

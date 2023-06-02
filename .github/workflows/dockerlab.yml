@@ -37,10 +37,10 @@ jobs:
           tags: chrisattineos/repoimageattineos:chrislab_wordpress
           
       -
-        name: install dependance
-        run: |
-          sudo apt install npm nodejs -y
-          sudo apt install awscli -y
+#        name: install dependance
+#        run: |
+#          sudo apt install npm nodejs -y
+#          sudo apt install awscli -y
           
       -
       
@@ -49,12 +49,11 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESSKEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRETKEY }}
-#          role-to-assume: arn:aws:iam::256403541264:role/accessallwithuseradmincpatin
-          aws-region: "eu-west-3"
+          aws-region: ${{ env.AWS_REGION }}
           
       -
-        name: Checkout
-        uses: actions/checkout@v3
+#        name: Checkout
+#        uses: actions/checkout@v3
   
       - 
         name: AWS EC2 Run Instance
@@ -82,23 +81,16 @@ jobs:
           user-data: |
             #!/bin/bash
             sudo yum update -y 
-            sudo yum install docker -y
-            wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) 
-            sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
-            sudo chmod -v +x /usr/local/bin/docker-compose
-            sudo systemctl start docker 
-            sudo systemctl enable docker
-            sudo docker pull chrisattineos/repoimageattineos:chrislab_wordpress
-            sudo docker pull chrisattineos/repoimageattineos:chrislab_mariadb
             sudo yum install git -y
             cd /tmp
             sudo git clone https://github.com/ChrisAttineos/repodownload.git
             cd repodownload/
-            sudo docker-compose up       
+            chmod +x script-env.sh
+            ./script-env.sh
           # Shutdown behavior for the EC2 instance. This may be stop or terminate.
           instance-shutdown-behavior: "stop"
           # AWS region to use for the EC2 instance
-          region: "eu-west-3"
+          region: ${{ env.AWS_REGION }}
           # SSH key name to use for the EC2 instance
           key-name: "keypair1"
           # Terminate the EC2 instance after the post step

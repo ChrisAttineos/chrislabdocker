@@ -36,7 +36,7 @@ jobs:
           push: true
           tags: chrisattineos/repoimageattineos:chrislab_wordpress
           
-      -
+#      -
 #        name: install dependance
 #        run: |
 #          sudo apt install npm nodejs -y
@@ -51,7 +51,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRETKEY }}
           aws-region: ${{ env.AWS_REGION }}
           
-      -
+#      -
 #        name: Checkout
 #        uses: actions/checkout@v3
   

@@ -99,4 +99,4 @@ jobs:
           # Terminate the EC2 instance after the post step
 #          terminate-on-post: "false"
           # Name of the EC2 instance to be added to the tags
-          name: "vmpipelinegithub"
+          name: "pipelinegithub"
